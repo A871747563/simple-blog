@@ -1,0 +1,8 @@
+{
+  "singleQuote": true,
+  "printWidth":140,
+  "semi": false,
+  "disableLanguages": ["vue"],
+  "htmlWhitespaceSensitivity": "ignore",
+  "trailingComma": "none"
+}

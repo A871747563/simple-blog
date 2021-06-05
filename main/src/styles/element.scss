@@ -1,0 +1,220 @@
+// 部分顽固样式重置（当深度选择器不起作用时）
+// 原因：element部分组件不是存在所编辑的组件内的，弹框就是很典型的例子
+// 因此，我们必须在最外层对样式进行重置
+@import './icon.scss';
+// 以下不需要样式切换--------------------------------------------------------
+// 通知（这个可以不改）
+.el-message {
+  min-width: 20px !important;
+  // width: 200px !important;
+  height: 40px !important;
+}
+// 无数据时的空盒子(这个不用改)
+.el-empty {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.el-empty__description p {
+  font-size: 20px !important;
+}
+// 离谱的玩意(一些诡异的背景色)
+.el-dropdown-menu__item:focus,
+.el-dropdown-menu__item:not(.is-disabled):hover {
+  background-color: transparent;
+}
+//  改变选择下拉框的背景色
+.el-select__popper.el-popper[role='tooltip'] {
+  background-color: transparent !important;
+}
+.el-popper.is-light {
+  background-color: transparent !important;
+}
+.el-popper {
+  border: none !important;
+}
+.el-select-dropdown {
+  min-width: 220px !important;
+}
+.el-submenu__title {
+  .el-submenu__icon-arrow {
+    position: absolute;
+    right: 3px;
+  }
+}
+// 新建/编辑博客页的上传组件图片设置
+.el-upload-list--picture .el-upload-list__item-thumbnail {
+  display: inline-block;
+  width: 120px !important;
+  height: auto !important;
+  margin-right: 20px;
+}
+.el-upload-list {
+  width: 100% !important;
+}
+
+// 以下需要样式切换----------------------------------------------------------------------------------------
+// dark-------------------------
+// 导航栏下拉框(可以给各个小项添加类名)
+.el-menu.el-menu--popup.el-menu--popup-bottom-start {
+  min-width: 120px !important;
+  background-color: transparent;
+  .el-menu-item.dark {
+    color: white;
+    background-color: #011826;
+    &:hover {
+      color: #4ca1ec;
+      background-color: #012840;
+    }
+  }
+  .el-menu-item.dark.is-active {
+    color: #4ca1ec;
+    background-color: #012840;
+  }
+}
+// 用户头像下拉菜单(可以定位修改)------------------------------------------------
+.el-dropdown-menu.avatar_item.dark {
+  background-color: #011826;
+  width: 100px;
+  .el-dropdown-menu__item {
+    padding: 0 10px;
+    color: white;
+    &:hover {
+      color: #4ca1ec;
+      background-color: #012840;
+    }
+    // 诡异白色bug解决方案
+    &:focus {
+      color: #4ca1ec;
+      background-color: #012840;
+    }
+  }
+}
+
+// 全局表单下拉框样式-----------------------------------------------
+.el-scrollbar__view.el-select-dropdown__list {
+  background-color: transparent;
+  .el-select-dropdown__item.dark {
+    background-color: #011826;
+    color: white;
+    &:hover {
+      background-color: black;
+    }
+    &:focus {
+      background-color: black;
+    }
+    &:active {
+      background-color: black;
+    }
+    // 奇怪的东西
+    &.hover {
+      background-color: black !important;
+    }
+    // 被选中
+    &.selected {
+      background-color: black !important;
+    }
+  }
+}
+
+// 对话框(可通过自定义类名来进行定位)------------------------------------------------------------------
+.el-message-box.dark {
+  background-color: rgb(1, 24, 38) !important;
+  border: none !important;
+  // 标题
+  .el-message-box__title {
+    color: white !important;
+  }
+  // 内容
+  .el-message-box__content {
+    color: white !important;
+  }
+  .el-message-box__btns {
+    .el-button {
+      background-color: transparent;
+      :hover {
+        color: #66b1ff;
+      }
+    }
+  }
+}
+// light---------------------
+// 导航栏下拉框(可以给各个小项添加类名)
+.el-menu.el-menu--popup.el-menu--popup-bottom-start {
+  min-width: 120px !important;
+  background-color: transparent;
+  .el-menu-item.light {
+    color: black;
+    background-color: #e1e7f0;
+    &:hover {
+      color: #409eff;
+      background-color: #b2c7e9;
+    }
+  }
+  .el-menu-item.light.is-active {
+    color: #409eff;
+    background-color: #b2c7e9;
+  }
+}
+// 用户头像下拉菜单(可以定位修改)------------------------------------------------
+.el-dropdown-menu.avatar_item.light {
+  background-color: #e1e7f0;
+  width: 100px;
+  .el-dropdown-menu__item {
+    padding: 0 10px;
+    color: black;
+    &:hover {
+      color: #409eff;
+      background-color: #b2c7e9;
+    }
+    // 诡异白色bug解决方案
+    &:focus {
+      color: #409eff;
+      background-color: #b2c7e9;
+    }
+  }
+}
+
+// 全局表单下拉框样式-----------------------------------------------
+.el-scrollbar__view.el-select-dropdown__list {
+  background-color: transparent;
+  .el-select-dropdown__item.light {
+    background-color: #e1e7f0;
+    color: black;
+    &:hover {
+      color: #409eff;
+      background-color: #b2c7e9;
+    }
+    &:focus {
+      color: #409eff;
+      background-color: #b2c7e9;
+    }
+    &:active {
+      color: #409eff;
+      background-color: #b2c7e9;
+    }
+    // 奇怪的东西
+    &.hover {
+      color: #409eff;
+      background-color: #b2c7e9 !important;
+    }
+    // 被选中
+    &.selected {
+      color: #409eff;
+      background-color: #b2c7e9 !important;
+    }
+  }
+}
+// 黑暗状态下的通知组件(只用调个黑暗版本，白色版本用默认的)
+.el-notification.dark.left {
+  background-color: #011826;
+  border: none;
+  .el-notification__title,
+  .el-notification__content,
+  .el-notification__closeBtn {
+    color: white !important;
+  }
+}
