@@ -1,50 +1,42 @@
 # simple-blog
 
-## Project setup
-```
+> 这是一个基于Vue+Element+Express的简易博客，在一般博客的基础上增加了很少的功能，减少了很多的功能
+
+# 启动方式
+
+> 0. 配置好数据库
+
+* 本项目使用Mysql数据库进行存储
+* 请将blogData数据文件内的blog_system数据库放置于mysql目录下的data文件
+
+> 1. 项目配置
+
+```js
 yarn install
+// 或者
+npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+> 2. 启动服务器
 
-### Compiles and minifies for production
-```
-yarn build
+```js
+yarn run kokoro
+// 或者
+npm run kokoro
 ```
 
-### Lints and fixes files
+> 3. 启动客户端
+
+```js
+yarn run kokoro
+// 或者
+npm run kokoro
 ```
-yarn lint
+
+> 4. 打包
+
+```js
+yarn run build
+// 或者
+npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### 
-
-超级管理
-
-* 博客管理
-* **用户管理**
-* 标签管理
-* 分类管理
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
