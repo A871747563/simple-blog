@@ -7,7 +7,7 @@
 > 0. 配置好数据库
 
 * 本项目使用Mysql数据库进行存储
-* 请将blogData数据文件内的blog_system数据库放置于mysql目录下的data文件
+* 请将blogData数据文件内的blog_system文件夹放置于mysql目录下的data
 
 > 1. 项目配置
 
